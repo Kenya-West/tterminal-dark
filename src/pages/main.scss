@@ -1,0 +1,317 @@
+/* Describe basic nodes */
+
+body {
+    color: $font-color;
+    background-color: $bg-color;
+}
+
+a {
+    color: $accent-color--light;
+
+    &:hover {
+        color: $font-color
+    }
+}
+
+input,
+input.text,
+textarea {
+    @include input-main();
+}
+
+button,
+input.submit {
+    @include button-main()
+}
+
+select {
+    @include dropdown-main();
+}
+
+/* Go for main page structure */
+
+body {
+    #wrapper {
+        #top {
+            .content {
+                a.current {
+                    background-color: lighten($accent-color--dark, 10%) !important;
+
+                    &:hover {
+                        color: $font-color;
+                    }
+                }
+            }
+        }
+
+        #header {
+            .content {
+                .menu-wrap .login a.profile {
+                    background-color: lighten($accent-color--dark, 10%);
+                }
+
+                a.logo {
+                    color: $accent-color--light;
+                }
+
+                .menu-wrap .nav a {
+                    color: $accent-color--light;
+                }
+            }
+        }
+
+        #welcome {
+            .content {}
+        }
+
+        #search_block {}
+
+        #container {
+            #content {
+                .block.torrents .trackers .block .more a {
+                    @include dropdown-main();
+                }
+
+                .block.torrents .content .items table tr.item {
+                    @include general-black();
+
+                    td.title a {
+                        color: $accent-color--light;
+
+                        &:hover {
+                            color: $font-color;
+                        }
+                    }
+
+                    td.cat a .sub {
+                        color: $accent-color--light;
+                        background: $accent-color--dark;
+                    }
+
+                    td.peers .s,
+                    td.remote a {
+                        color: rgb(158, 226, 152);
+                    }
+
+                    td.peers .l,
+                    td.remote a.tts {
+                        color: rgb(226, 152, 152);
+                    }
+
+                    td {
+                        border-bottom: 1px solid $accent-color--dark;
+                    }
+
+                    &:hover {
+                        background: $accent-color--dark;
+                    }
+                }
+
+                .block.torrents .content .items table thead tr .header {
+                    background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwMS45OTggNDAxLjk5OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAxLjk5OCA0MDEuOTk4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTczLjA5MiwxNjQuNDUyaDI1NS44MTNjNC45NDksMCw5LjIzMy0xLjgwNywxMi44NDgtNS40MjRjMy42MTMtMy42MTYsNS40MjctNy44OTgsNS40MjctMTIuODQ3ICAgIGMwLTQuOTQ5LTEuODEzLTkuMjI5LTUuNDI3LTEyLjg1TDIxMy44NDYsNS40MjRDMjEwLjIzMiwxLjgxMiwyMDUuOTUxLDAsMjAwLjk5OSwwcy05LjIzMywxLjgxMi0xMi44NSw1LjQyNEw2MC4yNDIsMTMzLjMzMSAgICBjLTMuNjE3LDMuNjE3LTUuNDI0LDcuOTAxLTUuNDI0LDEyLjg1YzAsNC45NDgsMS44MDcsOS4yMzEsNS40MjQsMTIuODQ3QzYzLjg2MywxNjIuNjQ1LDY4LjE0NCwxNjQuNDUyLDczLjA5MiwxNjQuNDUyeiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik0zMjguOTA1LDIzNy41NDlINzMuMDkyYy00Ljk1MiwwLTkuMjMzLDEuODA4LTEyLjg1LDUuNDIxYy0zLjYxNywzLjYxNy01LjQyNCw3Ljg5OC01LjQyNCwxMi44NDcgICAgYzAsNC45NDksMS44MDcsOS4yMzMsNS40MjQsMTIuODQ4TDE4OC4xNDksMzk2LjU3YzMuNjIxLDMuNjE3LDcuOTAyLDUuNDI4LDEyLjg1LDUuNDI4czkuMjMzLTEuODExLDEyLjg0Ny01LjQyOGwxMjcuOTA3LTEyNy45MDYgICAgYzMuNjEzLTMuNjE0LDUuNDI3LTcuODk4LDUuNDI3LTEyLjg0OGMwLTQuOTQ4LTEuODEzLTkuMjI5LTUuNDI3LTEyLjg0N0MzMzguMTM5LDIzOS4zNTMsMzMzLjg1NCwyMzcuNTQ5LDMyOC45MDUsMjM3LjU0OXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K");
+                }
+
+                .block.torrents .content .items table thead tr .headerSortUp {
+                    background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI5Mi4zNjIgMjkyLjM2MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjkyLjM2MiAyOTIuMzYyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI4Ni45MzUsMTk3LjI4NkwxNTkuMDI4LDY5LjM3OWMtMy42MTMtMy42MTctNy44OTUtNS40MjQtMTIuODQ3LTUuNDI0cy05LjIzMywxLjgwNy0xMi44NSw1LjQyNEw1LjQyNCwxOTcuMjg2ICAgQzEuODA3LDIwMC45LDAsMjA1LjE4NCwwLDIxMC4xMzJzMS44MDcsOS4yMzMsNS40MjQsMTIuODQ3YzMuNjIxLDMuNjE3LDcuOTAyLDUuNDI4LDEyLjg1LDUuNDI4aDI1NS44MTMgICBjNC45NDksMCw5LjIzMy0xLjgxMSwxMi44NDgtNS40MjhjMy42MTMtMy42MTMsNS40MjctNy44OTgsNS40MjctMTIuODQ3UzI5MC41NDgsMjAwLjksMjg2LjkzNSwxOTcuMjg2eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=");
+                }
+
+                .block.torrents .content .items table thead tr .headerSortDown {
+                    background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDI5Mi4zNjIgMjkyLjM2MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjkyLjM2MiAyOTIuMzYyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI4Ni45MzUsNjkuMzc3Yy0zLjYxNC0zLjYxNy03Ljg5OC01LjQyNC0xMi44NDgtNS40MjRIMTguMjc0Yy00Ljk1MiwwLTkuMjMzLDEuODA3LTEyLjg1LDUuNDI0ICAgQzEuODA3LDcyLjk5OCwwLDc3LjI3OSwwLDgyLjIyOGMwLDQuOTQ4LDEuODA3LDkuMjI5LDUuNDI0LDEyLjg0N2wxMjcuOTA3LDEyNy45MDdjMy42MjEsMy42MTcsNy45MDIsNS40MjgsMTIuODUsNS40MjggICBzOS4yMzMtMS44MTEsMTIuODQ3LTUuNDI4TDI4Ni45MzUsOTUuMDc0YzMuNjEzLTMuNjE3LDUuNDI3LTcuODk4LDUuNDI3LTEyLjg0N0MyOTIuMzYyLDc3LjI3OSwyOTAuNTQ4LDcyLjk5OCwyODYuOTM1LDY5LjM3N3oiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K");
+                }
+
+                .block.torrents .content .items table thead tr th {
+                    @include general-dark();
+                }
+
+                table tr td.left a.top {
+                    background: none;
+
+                    &:hover {
+                        color: $font-color;
+                    }
+                }
+
+                .block.access a.info,
+                .block.pulse a.more {
+                    @include button-main();
+                }
+
+                .block.access .content .features ul li span {
+                    color: inherit;
+                }
+
+                .block.torrents .cats .filter div {
+                    @include button-main();
+
+                    &.all.active {
+                        background-color: #ac0000;
+                    }
+                }
+
+                .block.torrents .content .pages,
+                &.releases td.movie .pages .nav a,
+                &.cinema .content .pages .nav a {
+                    @include button-main();
+                    color: $accent-color--light;
+                }
+
+                .block.torrents .content .pages .nav b.current {
+                    @include button-main();
+                    color: $font-color;
+                }
+
+                .block.torrents .content .pages a.load {
+                    @include button-main();
+                }
+
+                .block.torrents .content .items table tr.loaded_line td {
+                    background: $accent-color--dark;
+                }
+
+                .block.torrents .trackers a.open_notepad {
+                    @include general-dark;
+                }
+
+                .block.torrents .rutracker .item_text .main {
+                    .sp-wrap {
+                        border: $border;
+                    }
+
+                    .sp-body {
+                        background-color: $accent-color--dark;
+                    }
+
+                    .sp-head {
+                        @include general-dark;
+                    }
+                }
+
+                .block.torrents .sort a,
+                &.trailers .filter .sort a,
+                &.trailers .filter .cats a,
+                &.cinema.m .filters_block .sng .sort a,
+                &.cinema.m .filters_block .sng .genres a {
+                    @include button-main();
+
+                    &.current {
+                        background: #ac0000;
+                    }
+                }
+
+                &.trailers .filter .rates a:hover {
+                    color: $font-color;
+                }
+
+                .block.ttplayer a.mac h4,
+                .block.ttplayer a h4 {
+                    color: $accent-color--light;
+                }
+
+                .preload div {}
+
+                &.releases td.movie .filter a {
+                    @include button-main();
+                }
+
+                &.cinema .filters_block .cat a,
+                &.cinema .filters_block .filter a,
+                &.cinema .filters_block .rates a {
+                    color: $accent-color--light;
+
+                    &:hover {
+                        color: $font-color;
+                    }
+
+                    &.current {
+                        color: #ac0000;
+                    }
+                }
+
+                &.cinema .content .items .item .info {
+                    background: $bg-color;
+
+                    a {
+                        @include general-dark;
+
+                        &.green {
+                            background-color: green;
+                        }
+                    }
+                }
+
+                &.cinema .content .items .item .set_rate a {
+                    background: none;
+                }
+            }
+
+        }
+    }
+
+    #footer {
+        .content {}
+    }
+
+    #exposeMask {
+        background-color: $bg-color !important;
+    }
+
+    #download_cinema_box .content {
+        @include general-black();
+
+        .right .torrents table thead tr th {
+            @include general-dark();
+        }
+
+        .right .torrents table tr.item {
+            @include general-black();
+
+            td.title a {
+                color: $accent-color--light;
+
+                &:hover {
+                    color: $font-color;
+                }
+            }
+
+            td.cat a .sub {
+                color: $accent-color--light;
+                background: $accent-color--dark;
+            }
+
+            td.peers .s,
+            td.remote a {
+                color: rgb(158, 226, 152);
+            }
+
+            td.peers .l,
+            td.remote a.tts {
+                color: rgb(226, 152, 152);
+            }
+
+            td {
+                border-bottom: 1px solid $accent-color--dark;
+            }
+
+            &:hover {
+                background: $accent-color--dark;
+            }
+        }
+
+        .right .type a,
+        .rates a,
+        .left .tabs a,
+        .right .info .details .torrents_buttons a {
+            @include button-main();
+
+            &.current {
+                background: #ac0000;
+            }
+        }
+
+        .right .more_info,
+        .right .trailer,
+        .right .reviews {
+            @include general-dark;
+        }
+    }
+}

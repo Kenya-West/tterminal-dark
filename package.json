@@ -1,0 +1,28 @@
+{
+  "name": "tterminal-dark",
+  "version": "0.0.1",
+  "description": "Starter project to create styles for websites based on SCSS and powered by Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Start compiling by npm run watch or npm run compile\"",
+    "watch": "sass --watch src/style.scss dist/style.css",
+    "compile": "sass src/style.scss dist/style.css"
+  },
+  "keywords": [
+    "Nodejs",
+    "Node",
+    "Node.js",
+    "SCSS",
+    "SASS",
+    "node-sass",
+    "dart-sass",
+    "tterminal",
+    "tterminal.info"
+  ],
+  "author": "Kenya-West",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.15.1"
+  }
+}

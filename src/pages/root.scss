@@ -1,0 +1,17 @@
+body {
+    #wrapper {
+        #top {
+            @include general-dark();
+
+            .content {
+                @include general-dark();
+            }
+        }
+
+        #welcome {}
+    }
+
+    #footer {
+        .content {}
+    }
+}

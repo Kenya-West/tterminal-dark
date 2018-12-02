@@ -1,0 +1,69 @@
+@mixin general-black() {
+    background-color: $bg-color;
+    color: $font-color;
+    border: $border;
+}
+
+@mixin general-dark() {
+    background-color: $accent-color--dark;
+    color: $font-color;
+    border: $border;
+}
+
+@mixin input-main() {
+    background-color: $accent-color--dark;
+    color: $font-color;
+    border: solid 3px lighten($accent-color--dark, 10%);
+
+    &:hover {
+        background-color: lighten($accent-color--dark, 10%);
+        color: $font-color;
+        border: solid 3px lighten($accent-color--dark, 20%);
+    }
+}
+
+@mixin button-main() {
+    background-color: $accent-color--dark;
+    color: $font-color;
+    border: $border;
+
+    &:hover {
+        background-color: lighten($accent-color--dark, 10%);
+        color: $font-color;
+        border: $border;
+    }
+}
+
+@mixin button-secondary() {
+    background-color: $bg-color;
+    color: $accent-color--light;
+    border: solid 3px $accent-color--dark;
+
+    &:hover {
+        color: $font-color;
+        border-color: lighten($accent-color--dark, 10%);
+    }
+}
+
+@mixin dropdown-main() {
+    background-color: $accent-color--dark;
+    color: $font-color;
+    border: $border;
+
+    &:hover {
+        background-color: lighten($accent-color--dark, 10%);
+        color: $font-color;
+        border: $border;
+    }
+}
+
+@mixin opacity() {
+    opacity: 0.5;
+
+    transition: opacity ease-in 0.1s;
+
+    &:hover {
+        opacity: 1;
+
+    }
+}

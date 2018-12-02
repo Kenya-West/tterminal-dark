@@ -1,0 +1,15 @@
+/*
+These rulestyles should be applied
+only at exact URLs in Stylus extension
+with mode "URL in domain":
+
+tterminal.info
+
+You need to include every .scss file
+you have created under ./src folder
+*/
+
+@import "colors";
+@import "mixins";
+@import "pages/root";
+@import "pages/main";
