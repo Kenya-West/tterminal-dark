@@ -7,7 +7,7 @@
         "type": "chrome",
         "request": "launch",
         "name": "Launch Chrome at your website",
-        "url": "https://tterminal.info/",
+        "url": "http://tterminal.info/",
         "webRoot": "${workspaceFolder}"
     }]
 }
