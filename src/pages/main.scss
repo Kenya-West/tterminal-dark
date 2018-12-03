@@ -56,6 +56,10 @@ body {
 
                 .menu-wrap .nav a {
                     color: $accent-color--light;
+
+                    &.current {
+                        color: $accent-color--tterminal !important;
+                    }
                 }
             }
         }
@@ -144,11 +148,11 @@ body {
                     @include button-main();
 
                     &.all.active {
-                        background-color: #ac0000;
+                        background-color: $accent-color--tterminal;
                     }
                 }
 
-                .block.torrents .content .pages,
+                .block.torrents .content .pages .nav a,
                 &.releases td.movie .pages .nav a,
                 &.cinema .content .pages .nav a {
                     @include button-main();
@@ -189,12 +193,26 @@ body {
                 .block.torrents .sort a,
                 &.trailers .filter .sort a,
                 &.trailers .filter .cats a,
+                &.cinema .filters_block .sng .sort a,
+                &.cinema .filters_block .sng .genres a,
                 &.cinema.m .filters_block .sng .sort a,
                 &.cinema.m .filters_block .sng .genres a {
                     @include button-main();
 
                     &.current {
-                        background: #ac0000;
+                        background: $accent-color--tterminal;
+                    }
+                }
+
+                &.cinema .filters_block.fixed {
+                    background: $bg-color;
+                }
+
+                &.cinema .error.access {
+                    color: $accent-color--tterminal;
+
+                    .icon {
+                        background: $accent-color--tterminal;
                     }
                 }
 
@@ -207,7 +225,13 @@ body {
                     color: $accent-color--light;
                 }
 
-                .preload div {}
+                .block.activity .content .items .item .text b.login {
+                    color: $accent-color--light;
+                }
+
+                .preload div {
+                    background-color: $bg-color;
+                }
 
                 &.releases td.movie .filter a {
                     @include button-main();
@@ -223,7 +247,7 @@ body {
                     }
 
                     &.current {
-                        color: #ac0000;
+                        color: $accent-color--tterminal;
                     }
                 }
 
@@ -241,6 +265,18 @@ body {
 
                 &.cinema .content .items .item .set_rate a {
                     background: none;
+                }
+
+                &.soft td .bg-wrap {
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                &.soft td .content .block .item a {
+                    @include button-main();
+                }
+
+                &.soft td.mac {
+                    color: $accent-color--tterminal;
                 }
             }
 
@@ -304,7 +340,7 @@ body {
             @include button-main();
 
             &.current {
-                background: #ac0000;
+                background: $accent-color--tterminal;
             }
         }
 
